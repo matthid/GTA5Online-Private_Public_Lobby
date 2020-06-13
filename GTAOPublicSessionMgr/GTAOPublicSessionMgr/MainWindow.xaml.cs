@@ -45,7 +45,8 @@ namespace CodeSwine_Solo_Public_Lobby
 
         void Init()
         {
-            lblYourIPAddress.Content += " " + iPTool.IpAddress + ".";
+            txtYourIPv4Address.Text = iPTool.IpAddressV4;
+            txtYourIPv6Address.Text = iPTool.IpAddressV6;
             addresses = DaWhitelist.ReadIPsFromJSON();
             lsbAddresses.ItemsSource = addresses;
             foreach (IPAddress ip in addresses)

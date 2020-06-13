@@ -9,43 +9,43 @@ namespace CodeSwine_Solo_Public_Lobby.Helpers
 {
     public class IPTool
     {
-        private string _ipAddress;
+        private string _ipAddressV4;
 
-        public string IpAddress 
+        public string IpAddressV4
         {
             get 
             {
-                if (_ipAddress == null) _ipAddress = GrabInternetAddress();
-                return _ipAddress;
+                if (_ipAddressV4 == null) _ipAddressV4 = GrabInternetAddress("https://ipv4.icanhazip.com");
+                return _ipAddressV4;
             }
         }
+        private string _ipAddressV6;
 
+        public string IpAddressV6
+        {
+            get
+            {
+                if (_ipAddressV6 == null) _ipAddressV6 = GrabInternetAddress("https://ipv6.icanhazip.com");
+                return _ipAddressV6;
+            }
+        }
         /// <summary>
         /// Gets the hosts IP Address.
         /// </summary>
         /// <returns>String value of IP.</returns>
-        private string GrabInternetAddress()
+        private string GrabInternetAddress(string url)
         {
             // Still needs check to see if we could retrieve the IP.
             // Try for ipv6 first, but if that fails get ipv4
             string ip = "";
             try
             {
-                ip = new WebClient().DownloadString("https://ipv6.icanhazip.com");
+                ip = new WebClient().DownloadString(url);
             }
             catch (Exception e)
             {
                 ErrorLogger.LogException(e);
-
-                try
-                {
-                    ip = new WebClient().DownloadString("https://ipv4.icanhazip.com");
-                }
-                catch (Exception e2)
-                {
-                    ErrorLogger.LogException(e2);
-                    ip = "IP not found.";
-                }
+                ip = "IP not found.";
             }
             return ip;
         }

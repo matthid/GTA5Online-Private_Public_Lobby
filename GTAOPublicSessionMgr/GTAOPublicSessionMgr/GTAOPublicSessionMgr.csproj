@@ -53,22 +53,28 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C2F190854D8F6F14FA1C9ACDF545758AFD208C57</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>384B3B3AC0DA810339E8223A07ACAB6C3C1823A2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>CodeSwine-Solo_Public_Lobby_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>GTAOPublicSessionMgr_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GTAOPublicSessionMgr.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -135,7 +141,8 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="CodeSwine-Private_Public_Lobby_TemporaryKey.pfx" />
+    <None Include="GTAOPublicSessionMgr.snk" />
+    <None Include="GTAOPublicSessionMgr_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
