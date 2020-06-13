@@ -27,7 +27,7 @@ namespace CodeSwine_Solo_Public_Lobby.Helpers
                 firewallRule.InterfaceTypes = "All";
                 firewallRule.RemoteAddresses = addresses;
                 firewallRule.LocalPorts = "6672";
-                firewallRule.Name = "GTA5 CodeSwine - Private Public Lobby Outbound";
+                firewallRule.Name = "GTA5 Online - Private Public Lobby Outbound";
                 firewallRule.Direction = NET_FW_RULE_DIRECTION_.NET_FW_RULE_DIR_OUT;
                 INetFwPolicy2 firewallPolicy = (INetFwPolicy2)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FwPolicy2"));
 
@@ -75,7 +75,7 @@ namespace CodeSwine_Solo_Public_Lobby.Helpers
                 Console.WriteLine(addresses);
 
                 firewallRule.LocalPorts = "6672";
-                firewallRule.Name = "GTA5 CodeSwine - Private Public Lobby Inbound";
+                firewallRule.Name = "GTA5 Online - Private Public Lobby Inbound";
                 firewallRule.Direction = NET_FW_RULE_DIRECTION_.NET_FW_RULE_DIR_IN;
                 INetFwPolicy2 firewallPolicy = (INetFwPolicy2)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FwPolicy2"));
 
@@ -102,10 +102,10 @@ namespace CodeSwine_Solo_Public_Lobby.Helpers
         {
             try {
                 INetFwRule firewallRuleInbound = (INetFwRule)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FWRule"));
-                firewallRuleInbound.Name = "GTA5 CodeSwine - Private Public Lobby Inbound";
+                firewallRuleInbound.Name = "GTA5 Online - Private Public Lobby Inbound";
 
                 INetFwRule firewallRuleOutbound = (INetFwRule)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FWRule"));
-                firewallRuleOutbound.Name = "GTA5 CodeSwine - Private Public Lobby Outbound";
+                firewallRuleOutbound.Name = "GTA5 Online - Private Public Lobby Outbound";
 
                 INetFwPolicy2 firewallPolicy = (INetFwPolicy2)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FwPolicy2"));
 
